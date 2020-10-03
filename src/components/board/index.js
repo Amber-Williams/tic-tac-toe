@@ -63,11 +63,12 @@ export const Game = () => {
     <div className="Game">
       <h1> Tic - Tac - Toe</h1>
       <Board layout={boardLayout}/>
-      { game.winner 
+      { game.winner && game.winner !== 'TIE'
         ? <h2 className="Game__winning-message">{`${game.winner} has won!`}</h2> 
+        : game.winner && game.winner === 'TIE' 
+        ? <h2>The game tied</h2>
         : <h2>Player {game.currentPlayer}</h2>
       }
-      
     </div>
   )
 }
@@ -99,3 +100,9 @@ export const Game = () => {
 // styled
 
 // added fun animaition for when user wins
+
+
+// needs testing
+// needs a way to handle ties
+// play again button
+// mobile responsive

@@ -36,6 +36,11 @@ export const checkIfWon = (action) => {
   return false
 }
 
+export const checkIfTie = (board) => {
+  const flatBoard = board.flat()
+  return !flatBoard.includes(null)
+}
+
 
 export const createCurrentBoard = (action) => {
   const newBoard = JSON.parse(JSON.stringify(action.board))

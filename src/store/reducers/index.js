@@ -18,10 +18,16 @@ export const game = (state = defaultState.game, action) => {
   switch (action.type) {
     case SELECT_CELL: {
       const isWin = Helpers.checkIfWon(action)
+      let isTie;
 
+      if (!isWin) {
+        const currentBoard = Helpers.createCurrentBoard(action);
+        isTie = Helpers.checkIfTie(currentBoard)
+      }
+  
       return {
         ...state,
-        winner: isWin ? action.currentPlayer : null,
+        winner: isWin ? action.currentPlayer : isTie ? 'TIE': null,
         currentPlayer: state.currentPlayer === 'X' ? 'O' : 'X'
       }
     }
