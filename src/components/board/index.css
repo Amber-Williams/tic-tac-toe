@@ -1,3 +1,7 @@
 .Board {
   margin: auto;
 }
+
+.Board__cell {
+  height: 3rem;
+}
