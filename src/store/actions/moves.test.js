@@ -1,10 +1,9 @@
 import * as Actions from './moves'
 import configureMockStore from 'redux-mock-store'
+import * as Helpers from './../../utilities/helpers.js'
 import thunk from 'redux-thunk'
 
-const defaultState = {
-  
-}
+import { defaultState } from './../../utilities/constants'
 
 const middlewares = [thunk]
 const mockStore = configureMockStore(middlewares)
@@ -15,12 +14,13 @@ describe('selectCell', () => {
       type: Actions.SELECT_CELL,
       currentPlayer: 'X',
       row: 0,
-      col: 0
+      col: 0,
+      board: Helpers.createBoard(3)
     }
 
-    const store = mockStore({ todos: [] })
+    const store = mockStore(defaultState)
 
-    const result = Actions.selectCell('X', 0, 0)
-    expect(result).toEqual(expectedAction)
+    expect(store.dispatch(Actions.selectCell('X', 0, 0))).toEqual(expectedAction)
+
   })
 })

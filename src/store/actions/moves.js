@@ -4,7 +4,7 @@ export function selectCell(currentPlayer, row, col) {
   return (dispatch, getState) => {
     const { board } = getState();
 
-      dispatch( {
+      return dispatch({
         type: SELECT_CELL,
         currentPlayer,
         row,

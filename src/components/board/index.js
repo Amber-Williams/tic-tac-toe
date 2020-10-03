@@ -79,4 +79,6 @@ export const Game = () => {
 
 // wrote function to scan diagnals, rows and columns for player win
 
-// 
+// moved unility functions to helper functions file
+
+// moved reducer states into constants file
