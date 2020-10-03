@@ -28,7 +28,11 @@ const BoardCell = ({ cell, rowIndex, columnIndex }) => {
   }
 
 
-  return <div className="Board__cell border col-3" onClick={onSelectCell}>{content}</div>
+  return (
+    <div className="Board__cell" onClick={onSelectCell}>
+      <p className="Board__player">{content}</p>
+    </div>
+  )
 }
 
 const BoardRow = ({ row, rowIndex }) => {
@@ -42,7 +46,13 @@ const BoardRow = ({ row, rowIndex }) => {
 }
 
 const Board = ({ layout }) => {
-  return layout.map((row, i) => <BoardRow row={row} rowIndex={i} key={i}/>)
+  const board = layout.map((row, i) => <BoardRow row={row} rowIndex={i} key={i}/>)
+
+  return (
+    <div className="Board">
+      {board}
+    </div>
+  )
 }
 
 export const Game = () => {
@@ -50,11 +60,12 @@ export const Game = () => {
   const game = useSelector(selectGame)
 
   return (
-    <div className="Board">
-      Board: <Board layout={boardLayout}/>
+    <div className="Game">
+      <h1> Tic - Tac - Toe</h1>
+      <Board layout={boardLayout}/>
       { game.winner 
-        ? <div>{`${game.winner} has won!`}</div> 
-        : <div>Player {game.currentPlayer}</div>
+        ? <h2 className="Game__winning-message">{`${game.winner} has won!`}</h2> 
+        : <h2>Player {game.currentPlayer}</h2>
       }
       
     </div>
@@ -82,3 +93,9 @@ export const Game = () => {
 // moved unility functions to helper functions file
 
 // moved reducer states into constants file
+
+// fixed all tests
+
+// styled
+
+// added fun animaition for when user wins
