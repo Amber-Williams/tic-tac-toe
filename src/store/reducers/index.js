@@ -19,7 +19,6 @@ export const game = (state = defaultState.game, action) => {
     case SELECT_CELL: {
       const isWin = Helpers.checkIfWon(action)
 
-
       return {
         ...state,
         winner: isWin ? action.currentPlayer : null,

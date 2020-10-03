@@ -1,5 +1,6 @@
 import { board, game } from "."
 import * as Helpers from '../../utilities/helpers'
+import { defaultState } from '../../utilities/constants'
 import * as Actions from '../actions/moves'
 
 describe('createBoard', () => {
@@ -21,7 +22,7 @@ describe('board', () => {
   })
 
   it('should update a co-ordinate to match the currentPlayer', () => {
-    const state = Helpers.createBoard(3)
+    const state = defaultState.board
     const result = board(state, Actions.selectCell('X', 0, 0))
 
     state[0][0] = 'X'
@@ -42,13 +43,19 @@ describe('game', () => {
   })
 
   it('should update a co-ordinate to match the currentPlayer', () => {
-    const xState = { currentPlayer: 'X', winner: null }
-    const oState = { currentPlayer: 'O', winner: null }
+    const currentPlayer = defaultState.game.currentPlayer
+    
+    const opponent = currentPlayer === 'X' ? 'O' : 'X'
 
-    const xResult = game(xState, Actions.selectCell('X', 0, 0))
-    const oResult = game(oState, Actions.selectCell('X', 0, 0))
+    const stateAfterFirstPlay = defaultState.game
+    stateAfterFirstPlay.currentPlayer = opponent
 
-    expect(xResult).toEqual(oState)
-    expect(oResult).toEqual(xState)
+    const stateAfterSecondPlay = defaultState.game
+    
+    const firstPlay = game(defaultState.game, Actions.selectCell(currentPlayer, 0, 0))
+    const secondPlay = game(stateAfterFirstPlay, Actions.selectCell(opponent, 0, 0))
+
+    expect(firstPlay).toEqual(stateAfterFirstPlay)
+    expect(secondPlay).toEqual(stateAfterSecondPlay)
   })
 })

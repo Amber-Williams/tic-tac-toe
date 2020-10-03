@@ -1,8 +1,7 @@
 import * as Actions from './moves'
-import configureMockStore from 'redux-mock-store'
 import * as Helpers from './../../utilities/helpers.js'
 import thunk from 'redux-thunk'
-
+import configureMockStore from 'redux-mock-store'
 import { defaultState } from './../../utilities/constants'
 
 const middlewares = [thunk]
