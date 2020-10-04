@@ -1,5 +1,8 @@
 ## Preview to App
-![Preview to Tic Tac Toe App](preview.png "Title")
+![Preview to Tic Tac Toe App](preview.png "Preview to Tic Tac Toe App")
+
+## Link to app
+http://website-0nza6nd.s3-website.us-east-1.amazonaws.com/
 
 ## Link to Case Study
 [click here to view the case study](case-study.md)

@@ -1,6 +1,6 @@
 # Case Study
 
-#### Steps taken are as follows:
+## Steps taken are as follows:
 
 1. break down problem
   - make layout
@@ -24,10 +24,10 @@
 11. added testing for all actions, reducer’s, helper functions and each component
 12. deployed with serverless using AWS creditinals from the `.env` file with set up instructions in README.md
 
-#### TODOS:
+## TODOS:
 play again button
 mobile responsive
 
 
-#### Link to app
+## Link to app
 http://website-0nza6nd.s3-website.us-east-1.amazonaws.com/
