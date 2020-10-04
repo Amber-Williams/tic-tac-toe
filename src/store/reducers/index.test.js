@@ -3,16 +3,6 @@ import * as Helpers from '../../utilities/helpers'
 import { defaultState } from '../../utilities/constants'
 import * as Actions from '../actions/moves'
 
-describe('createBoard', () => {
-  it('should regenerate a square 2D array of provided length', () => {
-    Array(10).fill().map((_, i) => {
-      const board = Helpers.createBoard(i)
-      expect(board).toHaveLength(i)
-      board.forEach(row => expect(row).toHaveLength(i))
-    })
-  })
-})
-
 describe('board', () => {
   it('should create a default board state of length 3', () => {
     const expectedState = Helpers.createBoard(3)
@@ -44,7 +34,6 @@ describe('game', () => {
 
   it('should update a co-ordinate to match the currentPlayer', () => {
     const currentPlayer = defaultState.game.currentPlayer
-    
     const opponent = currentPlayer === 'X' ? 'O' : 'X'
 
     const stateAfterFirstPlay = defaultState.game
