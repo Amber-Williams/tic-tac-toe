@@ -41,7 +41,6 @@ export const checkIfTie = (board) => {
   return !flatBoard.includes(null)
 }
 
-
 export const createCurrentBoard = (action) => {
   const newBoard = JSON.parse(JSON.stringify(action.board))
   newBoard[action.row][action.col] = action.currentPlayer
