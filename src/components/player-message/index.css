@@ -1,0 +1,58 @@
+@keyframes bounce {
+  0% {
+      padding-top: 3rem;  
+      color: rgb(222, 55, 55);
+    }
+  25% {
+    padding-top: 2rem;
+    color: rgb(216, 186, 68);
+  }
+  50% {
+      padding-top: 2.5rem; 
+      color: rgb(77, 222, 55);
+    }
+  75% { 
+    padding-top: 3rem; 
+      color: rgb(55, 222, 211);
+    }
+  100% {
+    padding-top: 2rem;
+    color: rgb(68, 68, 216);
+  }
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    padding-top: 3rem;  
+    color: rgb(222, 55, 55);
+  }
+  25% {
+    color: rgb(216, 186, 68);
+  }
+  50% {
+      color: rgb(77, 222, 55);
+    }
+  75% { 
+      color: rgb(55, 222, 211);
+    }
+  100% {
+    padding-top: 2rem;
+    color: rgb(68, 68, 216);
+  }
+}
+
+.PlayerMessage__winning-message {
+  font-weight: bold;
+  animation: bounce 2s infinite; 
+  -webkit-animation: bounce 2s infinite; 
+  animation-direction: alternate-reverse;
+  transition: color 0.3s ease;
+}
+
+.PlayerMessage h1 {
+  padding: 2rem 0;
+}
+
+.PlayerMessage h2 {
+  padding-top: 3rem;
+}
