@@ -1,3 +1,9 @@
+## Preview to App
+![Preview to Tic Tac Toe App](preview.png "Title")
+
+## Link to Case Study
+[click here to view the case study](case-study.md)
+
 ## Available Scripts
 
 In the project directory, you can run:
